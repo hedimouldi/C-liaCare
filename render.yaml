@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: coeliacare
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: GROQ_API_KEY
+        sync: false
